@@ -19,6 +19,18 @@ int main() {
 		// use to check width and height
 		// std::cout << window.getWidth() << ", " << window.getHeight() << std::endl;
 		window.clear();
+		double x, y;
+		window.getMouseCursorPosition(x, y);
+
+		if (window.isKeyPressed(GLFW_KEY_A)) {
+			std::cout << "Pressed" << std::endl;
+		}
+
+		if (window.isMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT)) {
+			std::cout << "Clicked" << std::endl;
+		}
+
+		std::cout << "Cursor Position X,Y: " << x << ", " << y << std::endl;
 
 		// This does nothing other than verify that GLEW works.
 		glDrawArrays(GL_ARRAY_BUFFER, 0, 6);
@@ -26,7 +38,6 @@ int main() {
 		window.update();
 	}
 
-	// comment out line 17 to close on x button click
 	system("PAUSE");
 	return 0;
 }
