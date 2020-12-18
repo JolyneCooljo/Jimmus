@@ -23,12 +23,6 @@ namespace jimmus {	namespace graphics {
 			return false;
 		}
 
-		m_Input = new Input();
-		if (!m_Input) {
-			std::cout << "Failed to create Input Handler!" << std::endl;
-			return false; 
-		}
-
 		m_Window = glfwCreateWindow(m_Width, m_Height, m_Title, NULL, NULL);
 		if (!m_Window) {
 			std::cout << "Failed to create GLFW Window!" << std::endl;
@@ -38,9 +32,7 @@ namespace jimmus {	namespace graphics {
 		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowUserPointer(m_Window, this);
 		glfwSetWindowSizeCallback(m_Window, window_resize);
-		glfwSetKeyCallback(m_Window, Input::keyCallback);
-		glfwSetMouseButtonCallback(m_Window, Input::mouseButtonCallback);
-		glfwSetCursorPosCallback(m_Window, Input::cursorPositionCallback);
+		glfwSetKeyCallback(m_Window, Input::key_callback);
 		
 		std::cout << "OpenGL " << glGetString(GL_VERSION) << std::endl;
 

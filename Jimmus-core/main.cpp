@@ -18,6 +18,7 @@ int main() {
 	while (!window.closed()) {
 		// use to check width and height
 		// std::cout << window.getWidth() << ", " << window.getHeight() << std::endl;
+		
 		window.clear();
 
 		// This does nothing other than verify that GLEW works.
