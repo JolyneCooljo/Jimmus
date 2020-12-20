@@ -18,6 +18,7 @@ int main() {
 	while (!window.closed()) {
 		// use to check width and height
 		// std::cout << window.getWidth() << ", " << window.getHeight() << std::endl;
+		
 		window.clear();
 		double x, y;
 		window.getMouseCursorPosition(x, y);

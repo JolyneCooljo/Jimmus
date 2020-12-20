@@ -3,6 +3,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include "input.h"
 
 namespace jimmus { namespace graphics {
 
@@ -10,12 +11,14 @@ namespace jimmus { namespace graphics {
 #define MAX_BUTTONS 32
 
 		class Window {
+			friend class Input;
 			private:
 				friend struct GLFWwindow;
 
 				const char* m_Title;
 				int m_Width, m_Height;
 				GLFWwindow* m_Window;
+				Input* m_Input; 
 				bool m_Closed;
 
 				bool m_Keys[MAX_KEYS];
