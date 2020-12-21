@@ -32,7 +32,7 @@ namespace jimmus {
 			if (keycode >= MAX_KEYS || keycode < 0) return false;
 			else m_Keys[keycode] = action;
 			// Test key input.
-			// std::cout << m_keys[keycode] << std::endl;
+			// std::cout << m_Keys[keycode] << std::endl;
 			return true;
 		}
 

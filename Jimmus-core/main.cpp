@@ -1,10 +1,12 @@
 #include "src/graphics/window.h"
+#include "src/maths/maths.h"
 
 // method used for testing execution
 int main() {
 
 	using namespace jimmus;
 	using namespace graphics;
+	using namespace maths; 
 
 	Window window("Jimmus", 960, 640);
 	glClearColor(0.2f, 0.3f, 0.8f, 0.1f);
@@ -12,6 +14,9 @@ int main() {
 	GLuint vao;
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
+
+	vec2 vector(1.0f, 2.0f);
+	vector.add(vec2(5.0f, 2.0f)); 
 
 	std::cout << glGetString(GL_VERSION) << std::endl;
 
