@@ -35,20 +35,23 @@ namespace jimmus {	namespace graphics {
 			return false;
 		}
 		
+		if (initGlew() != GLEW_OK) {
+			std::cout << "Could not initialize GLEW!" << std::endl;
+			return false;
+		}
+
+		return true;
+	}
+
+	bool Window::initGlew() {
 		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowUserPointer(m_Window, this);
 		glfwSetWindowSizeCallback(m_Window, window_resize);
 		glfwSetKeyCallback(m_Window, Input::keyCallback);
 		glfwSetMouseButtonCallback(m_Window, Input::mouseButtonCallback);
 		glfwSetCursorPosCallback(m_Window, Input::cursorPositionCallback);
-		
 		std::cout << "OpenGL " << glGetString(GL_VERSION) << std::endl;
-
-		if (glewInit() != GLEW_OK) {
-			std::cout << "Could not initialize GLEW!" << std::endl;
-			return false;
-		}
-		return true;
+		return glewInit();
 	}
 
 	void Window::clear() const {

@@ -24,6 +24,7 @@ namespace jimmus { namespace graphics {
 				inline int getHeight() const { return m_Height; }
 			private:
 				bool init();
+				bool initGlew();
 		};
  	
 }}

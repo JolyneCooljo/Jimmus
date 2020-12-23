@@ -65,6 +65,5 @@ namespace jimmus {
 			Window* win = (Window*)glfwGetWindowUserPointer(window);
 			win->m_Input->setCursorPosition(xpos, ypos);
 		}
-
 	}
 }
