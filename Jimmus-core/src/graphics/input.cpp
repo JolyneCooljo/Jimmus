@@ -5,6 +5,8 @@ namespace jimmus {
 	namespace graphics {
 
 		Input::Input() {
+			mx = 0.0;
+			my = 0.0;
 			for (int i = 0; i < MAX_KEYS; i++) {
 				m_Keys[i] = false;
 			}

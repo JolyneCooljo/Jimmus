@@ -18,6 +18,8 @@ int main() {
 	vec2 vector(1.0f, 2.0f);
 	vector.add(vec2(5.0f, 2.0f)); 
 
+	mat4 position = mat4::translation(vec3(2, 3, 4));
+
 	std::cout << glGetString(GL_VERSION) << std::endl;
 
 	while (!window.closed()) {
